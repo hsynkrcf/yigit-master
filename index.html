@@ -293,8 +293,71 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Adres</h4>
                     <p class="lead mb-0">
-                        Osmaniye / Gemlik
-                        <br>Bursa
+                        namespace EvAdresiGosterme
+                        {
+                        public partial class Form1 : Form
+                        {
+                        public Form1()
+                        {
+                        InitializeComponent();
+                        ShowHomeLocationOnMap();
+                        }
+
+                        private void ShowHomeLocationOnMap()
+                        {
+                        // Ev adresinin koordinatlarını tanımla (örneğin: New York City)
+                        double latitude = 40.7128; // enlem
+                        double longitude = -74.0060; // boylam
+
+                        // Harita kontrolü oluştur
+                        WebBrowser webBrowser = new WebBrowser();
+                        webBrowser.Dock = DockStyle.Fill;
+
+                        // Harita üzerinde ev adresini gösteren HTML içeriği oluştur
+                        string html = $@"
+                        <html>
+                        <head>
+                            <title>Ev Adresi</title>
+                            <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
+                            <style type='text/css'>
+                        html, body, #map {{
+                            height: 100%;
+                            margin: 0;
+                            padding: 0;
+                        }}
+                            </style>
+                        </head>
+                        <body>
+                            <div id='map'></div>
+                            <script>
+                        function initMap() {{
+                            var homeLocation = {{ lat: {latitude}, lng: {longitude} }};
+                            var map = new google.maps.Map(document.getElementById('map'), {{
+                                zoom: 12,
+                                center: homeLocation
+                            }});
+                            var marker = new google.maps.Marker({{
+                                position: homeLocation,
+                                map: map,
+                                title: 'Ev Adresi'
+                            }});
+                        }}
+                            </script>
+                            <script src='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap' async defer></script>
+                        </body>
+                    </html>
+                    ";
+
+                    // Harita kontrolüne HTML içeriğini yükle
+                    webBrowser.DocumentText = html;
+
+                    // Form'a harita kontrolünü ekle
+                    Controls.Add(webBrowser);
+                    }
+                    }
+                    }
+                    Osmaniye / Gemlik
+                    <br>Bursa
                     </p>
                 </div>
 
@@ -718,9 +781,11 @@
                                 <h5 id="notUnderline">İkbal Cinek / Yazılım Geliştirici - Eğitmeni </h5>
                                 <h6>Bilge Adam</h6>
                                 <h6 class="mb-5">İletişim: ikbal.cinek@bilgeadamakademi.com</h6>
-                                <h5 id="notUnderline">Sadık GÜNBATAR / Mekatronik Mühendisi - Eğitmeni </h5>
-                                <h6>Mercedes Benz-Türk A.Ş</h6>
-                                <h6 class="mb-5">İletişim: sadikgunbatar@hotmail.com</h6>
+                                <h5 id="notUnderline">Hüseyin Karacif /O-Bilet  Bilişim Senior Developer  </h5>
+                                <h6>O Bilet</h6>
+                                <h6 class="mb-5">
+                                    İletişim: hsynkrcf@gmail.com
+                                </h6>
                                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                                     <i class="fas fa-times fa-fw"></i>
                                     Pencereyi Kapat
