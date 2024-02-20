@@ -293,63 +293,11 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Adres</h4>
                     <p class="lead mb-0">
-                       
+                        Osmaniye / Gemlik
+                        <br>Bursa
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.8951722664333!2d29.154267074997463!3d40.43332005463111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca5b97569802e5%3A0x1001e437d558903c!2s%C5%9Eht.%20Mehmetcik%20Sk.!5e0!3m2!1str!2str!4v1708441598667!5m2!1str!2str
+                         " width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                        private void ShowHomeLocationOnMap()
-                        {
-                        // Ev adresinin koordinatlarını tanımla (örneğin: Bursa/Gemlik)
-                        double latitude = 40.7128; // enlem
-                        double longitude = -74.0060; // boylam
-
-                        // Harita kontrolü oluştur
-                        WebBrowser webBrowser = new WebBrowser();
-                        webBrowser.Dock = DockStyle.Fill;
-
-                        // Harita üzerinde ev adresini gösteren HTML içeriği oluştur
-                        string html = $@"
-                        <html>
-                        <head>
-                            <title>Ev Adresi</title>
-                            <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
-                            <style type='text/css'>
-                        html, body, #map {{
-                            height: 100%;
-                            margin: 0;
-                            padding: 0;
-                        }}
-                            </style>
-                        </head>
-                        <body>
-                            <div id='map'></div>
-                            <script>
-                        function initMap() {{
-                            var homeLocation = {{ lat: {latitude}, lng: {longitude} }};
-                            var map = new google.maps.Map(document.getElementById('map'), {{
-                                zoom: 12,
-                                center: homeLocation
-                            }});
-                            var marker = new google.maps.Marker({{
-                                position: homeLocation,
-                                map: map,
-                                title: 'Ev Adresi'
-                            }});
-                        }}
-                            </script>
-                            <script src='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap' async defer></script>
-                        </body>
-                    </html>
-                    ";
-
-                    // Harita kontrolüne HTML içeriğini yükle
-                    webBrowser.DocumentText = html;
-
-                    // Form'a harita kontrolünü ekle
-                    Controls.Add(webBrowser);
-                    }
-                    }
-                    }
-                    Osmaniye / Gemlik
-                    <br>Bursa
                     </p>
                 </div>
 
@@ -377,7 +325,7 @@
 
                     <a class="btn btn-outline-light btn-social mx-1"
                        href="https://www.youtube.com/@YigitYilanci" target="_blank">
-                        <i class="fab fa-YouTube"></i>
+                        <i class="fab fa-Youtube"></i>
                     </a>
                 </div>
 
@@ -452,14 +400,14 @@
                                 <h5>Üniversite</h5>
                                 <p>
                                     Eylül 2016 – 2018<br />
-                                    Balıkesir Üniversitesi / Bilgisayar Programcılıgı<br />
+                                    Balıkesir Üniversitesi / Bilgisayar Programcılığı<br />
                                     Mezun - Meslek Yüksekokulu
                                 </p>
 
                                 <h5>Üniversite</h5>
                                 <p>
                                     Ekim 2022 – 2024<br />
-                                     Anadolu Üniversitesi / Yonetim Bilisim Sistemleri (MIS)<br />
+                                     Anadolu Üniversitesi / Yönetim Bilişim Sistemleri <br />
                                     OKUYOR - AÖF
                                 </p>
                                 
@@ -759,8 +707,10 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">SERTİFİKA VE
-                                    REFERANSLAR</h2>
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    SERTİFİKA VE
+                                    REFERANSLAR
+                                </h2>
                                 <!-- Icon Divider -->
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
@@ -770,15 +720,20 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <img class="img-fluid rounded mb-5" style="height:250px;width:350px;"
-                                    src="img/portfolio/cetfication and ref.jpg" alt="">
+                                     src="img/portfolio/cetfication and ref.jpg" alt="">
                                 <!-- Portfolio Modal - Text -->
                                 <h2 style="color:darkorange">Sertifikalar</h2>
-                                <h5>Exam 480 : Programming in HTML5 with JavaScript and CSS3</h5>
+                                <h5>Exam 70-480: Programming in HTML5 with JavaScript and CSS3</h5>
+                                <h5>Exam 70-483: Programming in C#</h5>
+                                <h5>Exam 70-486: Developing ASP.NET MVC Web Applications</h5>
+                                <h5>MCSA: Web Applications</h5>
+                                <h5>Bilge Adam Başarı Sertifikası</h5>
+                                <h5>Bilge Adam Katılım Sertifikası</h5>
                                 <h6 class="mb-5">
-                                    <a href="https://mcp.microsoft.com/anonymous/transcript/validate">DOĞRULA</a> <br />
-                                    Transcript ID : 1234074 - Access Code : 28061998
+                                    <a href="https://mcp.microsoft.com/anonymous/transcript/validate"></a> <br />
+
                                 </h6>
-                                <h5>UIPath Robotic Process Automation Certification at Bilge Adam</h5><br />
+                                <h5></h5><br />
                                 <h2 style="color:darkorange">Referanslar</h2>
                                 <h5 id="notUnderline">İkbal Cinek / Yazılım Geliştirici - Eğitmeni </h5>
                                 <h6>Bilge Adam</h6>
